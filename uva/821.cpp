@@ -52,11 +52,9 @@ int main()
         {
             for(int j=1; j <=count; j++)
             {
-               // cout<<graph[i][j]<<" ";
                 if(i != j && graph[i][j]!=10000000)
                     sum += graph[i][j];
             }
-           // cout<<endl;
         }
 
         int pr = (st.size()*(st.size()-1));

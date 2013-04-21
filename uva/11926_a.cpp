@@ -12,7 +12,6 @@ int main()
     int n,m;
     while(scanf("%d%d",&n,&m) && (n||m))
     {
-        //cout<<"--"<<n<<" "<<m<<endl;
         vector<pair<int,int> > v;
         bool correct = true;
         int a,b,c;
@@ -37,7 +36,6 @@ int main()
         a = it->first;
         b = it->second;
         it++;
-        //cout<<"%%%%%%\n";
         for(; it!=v.end(); it++)
         {
             if(it->first<b)

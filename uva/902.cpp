@@ -38,7 +38,6 @@ int main()
 		cout<<mostf<<endl;
 	}
 
-	//system("pause");
 	return 0;
 }
 

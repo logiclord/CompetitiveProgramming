@@ -40,7 +40,6 @@ int main()
     int id, dur, k;
     while(scanf("%s",str) && str[0]!='#' && scanf("%d%d",&id,&dur))
     {
-       // cout<<str<<id<<" "<<dur<<dur;
         struct comp cp(id,dur);
         pq.push(cp);
     }

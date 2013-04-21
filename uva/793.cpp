@@ -12,7 +12,6 @@ int prep[1000000];
 
 int findSet(int x)
 {
-  //  cout<<"@@"<<x<<endl;
     if(prep[x]==x)
         return x;
     return (prep[x] = findSet(prep[x]));

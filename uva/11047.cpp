@@ -69,17 +69,6 @@ int main()
             }
         }
 
-/*
-        for(int k=0; k<n ; k++)
-        {
-            for(int i=0; i<n ; i++)
-            {
-                cout<<parent[k][i]<<" ";
-            }
-            cout<<endl;
-        }
-*/
-
         int m;
         cin>>m;
         string sr,dt;

@@ -8,7 +8,6 @@ using namespace std;
 
 int nextStep(int a[][3])
 {
-    //cout<<"called\n";
     int sum = 0;
     int b[3][3] = {0};
     int row[] = {-1,1,0,0};
@@ -27,9 +26,7 @@ int nextStep(int a[][3])
                 }
             }
             b[i][j] = cur%2;
-           // cout<<b[i][j] <<"\t";
         }
-        //cout<<endl;
     }
     for(int i=0; i<3; i++)
     {
@@ -50,8 +47,6 @@ int main()
     {
         int a[3][3];
         int sum = 0, val = -1;
-        //getchar();
-       // getchar();
         for(int i=0; i<3; i++)
         {
             for(int j=0; j<3; j++)
@@ -62,15 +57,6 @@ int main()
                 sum += a[i][j];
             }
         }
-        /*
-        for(int i=0; i<3; i++)
-        {
-            for(int j=0; j<3; j++)
-            {
-                cout<<a[i][j]<<"\t";
-            }
-            cout<<endl;
-        }*/
         if(sum!=0)
         {
             val = 0;

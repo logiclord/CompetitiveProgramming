@@ -14,14 +14,6 @@ int compare (const void * a, const void * b)
 
 void makeSum(int sum, int n, int selected[], int m, int index)
 {
-    //cout<<"- "<<sum<<" "<<index<<" "<<n<<"\n";
-    /*
-    for(int i=0;index==m && i<n; i++)
-    {
-        cout<<data[selected[i]]<<" ";
-    }
-    cout<<endl;
-    */
     if(index == m && sum>=requiredSum)
     {
         for(int i=0; i<n; i++)
@@ -56,7 +48,6 @@ int main()
             sum += data[i];
             dataHash[i] = 0;
         }
-        //qsort (data, p, sizeof(int), compare);
         requiredSum = sum/2+1;
         makeSum(0,0, selected, p,0);
         for(int i=0; i<p; i++)

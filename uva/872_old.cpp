@@ -91,22 +91,11 @@ int main()
             if(tmp != ' ')
             {
                 scanf("<%c",&tmp2);
-                //  cout<<tmp<<" "<<tmp2<<endl;
                 pairHash.insert(make_pair(tmp,tmp2));
                 graph[tmp].push_back(tmp2);
             }
         }
-        /*
-                for(map<char, vector<char> >::iterator it = graph.begin(); it!= graph.end(); it++)
-                {
-                    cout<<"Starting "<<it->first<<" -- ";
-                    for(vector<char>::iterator ip = it->second.begin(); ip!= it->second.end(); ip++)
-                    {
-                        cout<<*ip<<"\t";
-                    }
-                    cout<<"\n";
-                }
-        */
+
         for(map<char, vector<char> >::iterator it = graph.begin(); it!= graph.end(); it++)
         {
             if(dfs_state[it->first]==-1)
@@ -122,7 +111,6 @@ int main()
 
             for(vector<string>::iterator it = tp_sorts.begin(); it!=tp_sorts.end(); it++)
             {
-                // cout<<*it<<endl;
                 string::iterator st = it->begin();
                 printf("%c",*st);
                 st++;
