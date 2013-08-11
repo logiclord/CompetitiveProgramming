@@ -94,6 +94,50 @@ void mergeSort(int arr[], int size)
 	mergeWrapper(arr,0, size-1);
 }
 
+void merge(int arr[], int i, int j, int k, int l)
+{
+	int m = i, n =l;
+	int p  = 0;
+	int *data = new int[l-i+1];
+	while(i<=j || k<=l)
+	{
+		if(i<=j && k<=l)
+		{
+			if(arr[i] < arr[k])
+			{
+				data[p++] = arr[i++];
+			}
+			else
+			{
+				data[p++] = arr[k++];
+			}
+		}
+		else if(i<=j)
+		{
+			data[p++] = arr[i++];
+		}
+		else
+		{
+			data[p++] = arr[k++];
+		}
+	}
+	for(int i=m; i<=n ;i++)
+	{
+		arr[i] = data[i-m];
+	}
+	delete []data;
+}
+
+void mergeSortBottomUp(int arr[], int size)
+{
+	for(int exp = 1 ; exp <= size; exp = exp<<1)
+	{
+		for(int start=0; start + exp <= size-1; start = start + 2*exp)
+		{
+			merge(arr, start, start+exp-1, start+exp, min(start+2*exp-1, size-1));
+		}
+	}
+}
 
 int getPivot(int arr[], int i, int j)
 {
@@ -335,7 +379,7 @@ int main()
 {
 	int arry[] = {100,2,45, 53 ,567,39983, 5, -4, -445, 4, 39, 94, -3434, 23723, 35,234, 121, -244, 982958258};
 	int size =  sizeof(arry)/sizeof(int);
-	radixExchangeSort(arry, size);
+	mergeSortBottomUp(arry, size);
 	for(int i=0; i<size; i++)
 	{
 		cout<<arry[i]<<endl;
