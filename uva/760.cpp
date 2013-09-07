@@ -92,7 +92,7 @@ int * createSuffixArray(char *T, int size)
 	{
 		countSort(k,size, RA, TSA, SA);
 		countSort(0, size, RA, TSA, SA);
-		TRA[SA[0]] = 0;
+		TRA[SA[0]] = 1;
 		int count = 1;
 		for(int i=1;i<size;i++)
 		{
