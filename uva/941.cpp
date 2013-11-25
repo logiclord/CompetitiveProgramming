@@ -55,7 +55,7 @@ int main()
 			if(k==line.size())
 				break;
 
-			cout<<line[choice];
+			//cout<<line[choice];
 			picked[choice] = true;
 		}
 		for(int k = 0; k<line.size(); k++)
