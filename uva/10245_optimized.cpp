@@ -46,6 +46,7 @@ double  closestPair(vector<Point> &xaxis, int p, int q, vector<Point> &yaxis)
 {
 	double  answer = INF;
 	int divide = q-p+1;
+	
 	if(divide>0 && divide<=3)
 	{
 		for(int i=0; i<divide; i++)
@@ -58,7 +59,7 @@ double  closestPair(vector<Point> &xaxis, int p, int q, vector<Point> &yaxis)
 	}
 	else if(divide > 3)
 	{
-		divide = divide/2;
+		divide = (p+q)/2;
 		vector<Point> yleft, yright, yleftm, yrightm;
 
 		for(vector<Point>::iterator it = yaxis.begin(); it!=yaxis.end(); it++)
@@ -90,16 +91,18 @@ double  closestPair(vector<Point> &xaxis, int p, int q, vector<Point> &yaxis)
 				yrightm.push_back(*it);
 		}
 
-		int n = yleftm.size(), m = yrightm.size(), q = 0, r = 0;
-		for(int i=0; i<n && q<m; i++)
+		int n = yleftm.size(), m = yrightm.size(), j = 0, r = 0;
+		for(int i=0; i<n && j<m; i++)
 		{
-			while(q<m && yrightm[q].y < xaxis[divide].y - d)
-				q++;
-			while(q<m && yrightm[q].y < xaxis[divide].y + d)
+			while(j<m && yrightm[j].y + d < yleftm[i].y)
+				j++;
+			int p = j;
+			while(j<m && yrightm[j].y <= yleftm[i].y + d)
 			{
-				d = min(d, dist(yleftm[i], yrightm[q]));
-				q++;
+				d = min(d, dist(yleftm[i], yrightm[j]));
+				j++;
 			}
+			j = p;
 		}
 
 		answer = d;
