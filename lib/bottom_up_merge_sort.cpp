@@ -44,7 +44,7 @@ void mergeSort(int arr[], int n)
             merge(arr,j,min(j + i, n), min(n-1,j + 2*i - 1), w);
         }
     }
-
+	free(w);
 }
 
 /* Driver progra to test above functions */
